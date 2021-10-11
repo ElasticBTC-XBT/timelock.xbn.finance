@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "truffle compile --all",
     "deploy": "rm -rf  ./build &&  truffle compile --all && truffle migrate -f 2 --to 2 --network testnet",
-    "deploy:mainnet": "rm -rf  ./build &&  truffle migrate -f 2 --to 2 --network bsc",
-    "verify:mainnet": "truffle run verify XDrop@0x30e0c355BA0e8FceD34F961E56dA156F85242BC8 --network bsc",
+    "deploy:mainnet": "truffle migrate -f 2 --to 2 --network bsc",
+    "verify:mainnet": "truffle run verify TimeLockController@0xB94b6f0c0dFd11a15e437A66d33bc8ECA5A94501 --network bsc",
     "verify:testnet": "truffle run verify TimeLockController@0x30e0c355BA0e8FceD34F961E56dA156F85242BC8 --network testnet"
   },
   "keywords": [],
