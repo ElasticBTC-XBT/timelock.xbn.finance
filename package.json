@@ -4,9 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "truffle compile --all",
+    "deploy": "rm -rf  ./build &&  truffle compile --all && truffle migrate -f 2 --to 2 --network testnet",
+    "deploy:mainnet": "rm -rf  ./build &&  truffle migrate -f 2 --to 2 --network bsc",
+    "verify:mainnet": "truffle run verify XDrop@0x1aE23B4dcA480Af2e856C7ed701C3524E22f31E6 --network bsc",
+    "verify:testnet": "truffle run verify XDrop@0x1aE23B4dcA480Af2e856C7ed701C3524E22f31E6 --network testnet"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.3.2",
+    "@truffle/hdwallet-provider": "^1.5.1",
+    "dotenv": "^10.0.0",
+    "truffle": "^5.4.14"
+  }
 }
